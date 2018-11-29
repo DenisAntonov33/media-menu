@@ -1,0 +1,94 @@
+.dvs-menu [type="checkbox"],
+.dvs-menu label.toggleSubMenu {
+	display: none;
+}
+
+.dvs-menu label.toggleMenu {
+	display: none;
+	background-color: #c9c9c9;
+	padding: 15px 40px;
+	text-transform: uppercase;
+	font-size: 14px;
+	cursor: pointer;
+	position: relative;
+}
+
+.dvs-menu label.toggleMenu .fa {
+	position: absolute;
+	left: 17px;
+	top: 15px;
+	font-size: 18px;
+}
+
+@media all and (max-width: 800px){
+.dvs-menu{
+	overflow: hidden;
+}
+
+
+.dvs-menu ul {
+	display: block;
+	max-height: 0;
+	transition: 0.3s;
+}
+
+.dvs-menu label.toggleMenu {
+	display: block;
+	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%);
+background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%);
+background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%);
+}
+
+.dvs-menu input.toggleMenu:checked + label.toggleMenu {
+	background: -moz-linear-gradient(top, rgba(69,72,77,1) 0%, rgba(0,0,0,1) 100%);
+background: -webkit-linear-gradient(top, rgba(69,72,77,1) 0%,rgba(0,0,0,1) 100%);
+background: linear-gradient(to bottom, rgba(69,72,77,1) 0%,rgba(0,0,0,1) 100%);
+	color: #fff;
+}
+
+input.toggleMenu:checked ~ ul,
+input.toggleSubMenu:checked ~ ul {
+	display: block;
+	position: relative;
+	max-height: 5000px;
+	transition: 2s;
+}
+
+.dvs-menu label.toggleSubMenu {
+	position: absolute; 
+	width: 100%;
+	height: 100%;
+	top: 0;
+	right: 0;
+	display: block;
+	cursor: pointer;
+}
+
+input.toggleSubMenu:checked ~ a {
+	background: #454547;
+	color: #fff;
+}
+
+.dvs-menu label.toggleSubMenu .fa::before {
+	color: #454547;
+	content: "\f0d7";
+}
+
+.dvs-menu label.toggleSubMenu .fa {
+	position: absolute;
+	top: 15px;
+	right: 30px;
+}
+
+.dvs-menu input.toggleSubMenu:checked ~ label.toggleSubMenu .fa::before {
+	content: "\f0d8";
+	color: #fff;
+}
+
+.dvs-menu li ul li ul {
+	position: absolute;
+	left: 5px;
+	top: auto;
+}
+	
+}
